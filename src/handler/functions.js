@@ -58,4 +58,5 @@ const handleHomePage = (request, response) => {
     });
 }
 
+
 module.exports = { handleOtherFiles, errorPage500, handlePageNotFound, handleHomePage };
