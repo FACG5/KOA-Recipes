@@ -12,9 +12,11 @@ const fetch = (file, requestType, url, callback) => {
                 if (response) {
                     callback(null, response['result']);
                 } else {
+                    console.log("2");
                     callback(new TypeError('There Is No Response'));
                 }
             } else {
+                console.log("3");
                 callback(new TypeError('There Is Error in Server'));
 
             }

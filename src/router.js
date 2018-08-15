@@ -1,5 +1,7 @@
 //const handleSignUpPage = require('./handler/');
 const addPost = require('./handler/add_post');
+const { handleSignIn, signInPost } = require('./handler/handleSignIn');
+
 const getRecipes = require('./handler/getRecipes');
 const { handleAddUser, handlerSignupPage } = require('./handler/handleSignUpPage');
 
@@ -28,7 +30,15 @@ const router = (request, response) => {
     }
     else if (endpoint === '/add_post' && method === 'POST') {
         addPost(request, response);
-    } else {
+    }
+    else if(endpoint === '/sign_in' && request.method=== 'GET'){
+        handleSignIn (request, response);
+    }
+    else if (endpoint === '/sign_in' && request.method === 'POST') {
+        console.log('POST');
+        signInPost (request, response);
+    }
+    else {
         handlePageNotFound(request, response);
     }
 };
