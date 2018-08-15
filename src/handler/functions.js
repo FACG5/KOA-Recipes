@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+
 const handleOtherFiles = (request, response) => {
     const endpoint = request.url;
     const extension = endpoint.split('.')[1];
@@ -18,7 +19,7 @@ const handleOtherFiles = (request, response) => {
         if (err) {
             errorPage500(request, response);
         } else {
-            response.writeHead(200, `Content-Type:${contentType[extension]}`);
+          response.writeHead(200, `Content-Type:${contentType[extension]}`);
             response.end(file);
         }
     });
@@ -41,10 +42,7 @@ const handlePageNotFound = (request, response) => {
         if (error) {
             errorPage500(request, response);
         } else {
-            response.writeHead(404, 'Content-Type: text/html');
-            response.end(file);
-        }
-    });
+   }});
 }
 const handleHomePage = (request, response) => {
 
