@@ -2,11 +2,19 @@ const { Pool } = require('pg');
 const url = require('url');
 require('env2')('./config.env');
 
+let DB_URL = '';
 
-if (!process.env.DB_URL)
+if (process.env.NODE_ENV === 'test') {
+    DB_URL = process.env.TEST_DB_URL;
+} else {
+    DB_URL = process.env.DB_URL;
+}
+
+if (!DB_URL)
     throw new Error('Cant Found The DB URL ');
 
-const params = url.parse(process.env.DB_URL);
+
+const params = url.parse(DB_URL);
 const [username, password] = params.auth.split(':');
 
 const options = {
@@ -18,7 +26,6 @@ const options = {
     max: process.env.MAX_DB_CONNECTIONS || 2,
     ssl: process.env.host !== 'localhost'
 };
-console.log(options);
 module.exports = new Pool(options);
 
 
