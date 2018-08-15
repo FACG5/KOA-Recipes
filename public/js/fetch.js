@@ -1,23 +1,26 @@
-const fetch = (file,requestType,url,callback)=>{
+const fetch = (file, requestType, url, callback) => {
 
     const xhr = new XMLHttpRequest();
 
- xhr.onreadystatechange = ()=>{
-        if(xhr.readyState === 4)
-            if(xhr.status===200){
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4)
+            if (xhr.status === 200) {
 
-                const response = xhr.responseText;
-                if(response){
-                    callback(null,JSON.parse(response));
-                }else{
+                const response = JSON.parse(xhr.responseText);
+
+                if (response) {
+                    callback(null, response['result']);
+                } else {
                     callback(new TypeError('There Is No Response'));
                 }
-            }else{
+
+            } else {
                 callback(new TypeError('There Is Error in Server'));
             }
+
     }
 
-    xhr.open(requestType,url,true);
+    xhr.open(requestType, url, true);
     xhr.send(JSON.stringify(file));
 
 }
