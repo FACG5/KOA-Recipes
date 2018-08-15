@@ -35,7 +35,6 @@ const router = (request, response) => {
         handleSignIn (request, response);
     }
     else if (endpoint === '/sign_in' && request.method === 'POST') {
-        console.log('POST');
         signInPost (request, response);
     }
     else {
