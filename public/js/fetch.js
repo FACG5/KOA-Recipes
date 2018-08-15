@@ -1,5 +1,4 @@
 const fetch = (file, requestType, url, callback) => {
-
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = () => {
@@ -7,19 +6,16 @@ const fetch = (file, requestType, url, callback) => {
             if (xhr.status === 200) {
 
                 const response = JSON.parse(xhr.responseText);
-
                 if (response) {
                     callback(null, response['result']);
                 } else {
                     callback(new TypeError('There Is No Response'));
                 }
-
             } else {
                 callback(new TypeError('There Is Error in Server'));
+
             }
-
     }
-
     xhr.open(requestType, url, true);
     xhr.send(JSON.stringify(file));
 
