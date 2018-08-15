@@ -14,13 +14,17 @@ submit.addEventListener('click', (e) => {
     const post = JSON.stringify({ "content": content.value });
 
     fetch(post, 'POST', '/add_post', (err, result) => {
+
         if (err) {
             alert('There Is Error in Adding Post Check Your Connection');
         } else {
-            addPost(result);
+            addPost(null);
         }
     });
+
 });
+
+
 
 
 // Add Post To Current Page
@@ -44,9 +48,14 @@ const addPost = (response) => {
     result.classList.add('result');
 
     //add Content To Elements 
-    username.textContent = "kannanHassouna";
-    postContent.textContent = content.value;
 
+    if (response) {
+        username.textContent = response["user_id"];
+        postContent.textContent = response["content"];
+    } else {
+        username.textContent = "kannanHassouna";
+        postContent.textContent = content.value;
+    }
     // Append Elements 
 
     //Append to rating div
@@ -70,11 +79,14 @@ window.onload = () => {
 
     fetch(null, 'GET', '/add_post', (err, result) => {
         if (err) {
-            alert('There Is Error in Adding Post Check Your Connection');
+            alert('Please Check Your Connection');
         } else {
-            addPost(result);
+            const rows = result;
+            console.log("enter");
+
+            for (let i = 0; i < result.length; i++) {
+                addPost(result[i]);
+            }
         }
     });
-
-
 }

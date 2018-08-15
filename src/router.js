@@ -7,6 +7,8 @@ const { handleOtherFiles, handlePageNotFound, handleHomePage } = require('./hand
 
 const router = (request, response) => {
     const endpoint = request.url;
+
+    
     const method = request.method;
 
     if (endpoint === '/home') {
