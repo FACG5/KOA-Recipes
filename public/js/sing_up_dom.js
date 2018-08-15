@@ -1,4 +1,4 @@
-const select = (elementById) =>{
+const select = (elementById) => {
     return document.getElementById(elementById);
 };
 
@@ -19,28 +19,28 @@ const regexName = /^[a-zA-Z]{1,}$/;
 
 username.addEventListener('input', (e) => {
     e.preventDefault();
-    if(username.value.length === 0)  usernameError.textContent = "full the filed";
-    if(!regex.test(username.value)){
+    if (username.value.length === 0) usernameError.textContent = "full the filed";
+    if (!regex.test(username.value)) {
         usernameError.textContent = "The username not valid\n ( username should content [a-z] [A-Z] [0-9] [-] )\n at lest 8 character";
-    }else{
+    } else {
         usernameError.textContent = "";
     }
 });
 
 fname.addEventListener('input', (e) => {
     e.preventDefault();
-    if(!regexName.test(fname.value)){
+    if (!regexName.test(fname.value)) {
         fnameError.textContent = "The first name not valid\n first name should letters only [a-z] [A-Z]";
-    }else{
+    } else {
         fnameError.textContent = "";
     }
 });
 
 lname.addEventListener('input', (e) => {
     e.preventDefault();
-    if(!regexName.test(lname.value)){
+    if (!regexName.test(lname.value)) {
         lnameError.textContent = "The last name not valid\n last name should letters only [a-z] [A-Z]";
-    }else{
+    } else {
         lnameError.textContent = "";
     }
 });
@@ -55,14 +55,14 @@ password.addEventListener('input', (e) => {
     const digitALowerAUpper = /[A-Z]+/;
     const minimumLength = /^.{8,}$/;
 
-    if(!minimumLength.test(value)){
+    if (!minimumLength.test(value)) {
         passwordError.textContent = "at least 8 digit";
-    }else {
-         if(digitALowerAUpper.test(value)){
+    } else {
+        if (digitALowerAUpper.test(value)) {
             passwordError.textContent = "strong";
-         }else if(digitAndLower.test(value)){
+        } else if (digitAndLower.test(value)) {
             passwordError.textContent = "mediate";
-        }else if(digit.test(value)) {
+        } else if (digit.test(value)) {
             passwordError.textContent = "Weak";
         }
     }
@@ -74,7 +74,7 @@ confirmPassword.addEventListener('input', (e) => {
     e.preventDefault();
     if (password.value !== confirmPassword.value) {
         confirmError.innerText = "Passwords do not match";
-    }else{
+    } else {
         confirmError.innerText = "";
     }
 });
@@ -82,7 +82,8 @@ confirmPassword.addEventListener('input', (e) => {
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
-    if(verfiy()) {
+
+    if (verfiy()) {
         if (usernameError.textContent === "" &&
             (passwordError.textContent === "strong" || passwordError.textContent === "mediate")
             && confirmError.textContent === "" && fnameError.textContent === "" && lnameError.textContent === "") {
@@ -92,31 +93,30 @@ button.addEventListener('click', (e) => {
                 "fname": fname.value,
                 "lname": lname.value
             };
-
             fetch(object, "POST", "/sign_up", (err, res) => {
-                if (err){
+                if (err) {
                     alert("There Is Error " + err);
-                }else {
-                    window.location="/sign_in";
+                } else {
+                    window.location = "/sign_in";
                 }
             });
 
 
-        }else alert("Can pleas Password no Weak\n and full the all require");
-    }else alert("full the filed");
+        } else alert("Can pleas Password no Weak\n and full the all require");
+    } else alert("full the filed");
 
 
 });
 
 
-const verfiy=()=>{
+const verfiy = () => {
 
-    if(username.value.trim()==='' ||
-        password.value.trim()===''||
-        confirmPassword.value.trim()===''||
-        fname.value.trim()===''||
-        lname.value.trim()===''
+    if (username.value.trim() === '' ||
+        password.value.trim() === '' ||
+        confirmPassword.value.trim() === '' ||
+        fname.value.trim() === '' ||
+        lname.value.trim() === ''
     ) return false;
-else return true;
+    else return true;
 };
 
