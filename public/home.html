@@ -1,16 +1,70 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/public/css/home.css">
     <title>Home</title>
 </head>
-<body>
-    <h1>Home Page !</h1>
 
-    <script src="/public/js/dom.js"></script>
+<body>
+    <header>
+
+        <nav>
+            <div class="container">
+                <a>
+                    <h2>KannanHassouna</h2>
+                </a>
+
+                <a>
+                    <h2>
+                        <span class="green"> Koa</span>-Recipes</h2>
+                </a>
+                <a>
+                    <h2 id='sign_out'>
+                        <span class="red"> Sign-out
+                        </span>
+                    </h2>
+                </a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <section class="insert_recipe">
+        <div class="fields">
+            <textarea name="recipe" id="content" placeholder="What in Your Mind"></textarea>
+            <input type="submit" id='btn'>
+        </div>
+    </section>
+    <hr>
+    <section class="timeline">
+        <div class="result">
+            
+            <h2>KannanHassouna</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque magni accusantium, esse asperiores, fuga dignissimos
+                cumque vel mollitia, assumenda id perferendis non hic. Optio dolorum dolore quos quam assumenda molestias!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nostrum, aspernatur dolorum tempore earum
+                nam nemo iure laborum, veritatis repudiandae, fuga facilis aliquam. Cupiditate, temporibus culpa! Aspernatur,
+                ad deleniti. Consequatur.
+            </p>
+
+            <div class="rating">
+                <span class="red" id="bad">
+                    <a href="#"> Bad </a>
+                </span>
+                <span class="green" id="good">
+                    <a href="#"> Good </a>
+                </span>
+            </div>
+        </div>
+    </section>
 </body>
+<script src="/public/js/home.js"></script>
+<script src="/public/js/fetch.js"></script>
+
 </html>

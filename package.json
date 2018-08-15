@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start":  "node ./src/server.js",
-    "nod":    "nodemon ./src/server.js",
-    "test":   "node src/database/test/test_db.js | tap-spec",
-    "cover":  "istanbul cover src/database/test/test_db.js.js",
+    "start": "node ./src/server.js",
+    "nod": "nodemon ./src/server.js",
+    "test": "node src/database/test/test_db.js | tap-spec",
+    "cover": "istanbul cover src/database/test/test_db.js.js",
     "testFE": "node public/test/test_fe.js | tap-spec",
     "testBE": "node src/test/test_be.js | tap-spec",
     "testDB": "NODE_ENV=test node src/database/test/test_db.js | tap-spec"

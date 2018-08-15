@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header nav{
+box-shadow:0 0 5px 0px rgba(0, 0, 0,.4); 
+height: 70px;   
+justify-content: space-between;
+display: flex;
+align-items: center;
+background: #eee;
+}
+.container{
+width: 95%;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+
+.container a{
+    font-size:10px;
+    color:#424242;
+}
+
+.container a:nth-child(2){
+    font-size:20px;
+    color:black;
+}
+    
+.green{
+    color:green;
+}
+
+
+.insert_recipe{
+    background: red;
+    width: 40%;
+background: rgba(245, 245, 245, 0.918);
+height: 30vh;
+margin: 0 auto;
+margin-top: 40px;
+box-shadow:0 0 5px 0px rgba(0, 0, 0,.4); 
+border-radius: 5px;
+margin-top: 50px;
+}
+.red{
+    color:red;
+}
+
+
+textarea{
+    width: 80%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    display: block;
+    margin: 0 auto;
+    margin-top:30px; 
+}
+.fields{
+
+width: 100%;
+background: rgba(245, 245, 245, 0.918);
+height: 30vh;
+margin-top: 40px;
+border-radius: 5px;
+margin-top: 50px;
+margin-top: 50px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+textarea::placeholder{
+    text-align: left;
+    font-size: 25px;
+}
+.fields input{
+height: 50px;
+background:rgb(51, 131, 51);
+margin-top:30px; 
+border: 0;
+color:white;
+font-family: lato;
+font-size:35px;
+border-radius: 6px;
+padding:0 40px;
+margin-bottom: 10px;
+}
+hr{
+    margin-top: 50px;
+    border: 0;
+height: 2px;
+background: rgb(197, 197, 197);
+    width: 70%;
+    margin: 50px auto;
+}
+ .result { 
+    width: 40%;
+    margin:30px auto;
+    background: rgb(250, 250, 250);
+    border-radius:5px; 
+    border: .5px #c5c3c3 solid;
+    transition-duration: 0.2s;
+    height: 260px;
+    box-shadow:0 0 5px 0px rgba(0, 0, 0,.4); 
+
+}
+ .result:hover { 
+    box-shadow:0 0 5px 0px rgba(0, 0, 0,.4); 
+    padding: 3px;
+}
+.result h2{
+    color:rgb(77, 77, 77); 
+margin-left:50px; 
+margin-top: 40px;
+}
+.result p{
+    color:rgb(77, 77, 77); 
+margin-left:50px; 
+margin-top: 20px;
+font-size:18px;
+width: 90%;
+}
+
+.rating{
+    display: flex;
+
+    width: 70%;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+.rating span{
+    font-size:20px;
+    font-weight: 800;
+}
+ a{
+     color:inherit;
+     text-decoration: none;
+ }
