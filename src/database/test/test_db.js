@@ -31,15 +31,6 @@ tape('Test insert row in database ', (t) => {
             t.end();
         });
     });
+    
 });
 
-// tape("Test The Router (home)", (t) => {
-//     supertest(router)
-//         .get('/home')
-//         .expect(200)
-//         .expect("content-type", "text/html")
-//         .end((err, res) => {
-//             t.end();
-//         });
-
-// })
