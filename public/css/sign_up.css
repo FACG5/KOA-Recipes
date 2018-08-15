@@ -1,3 +1,52 @@
-* {
-    background-color: #444 ;
+h1 {
+    text-align: center;
+    color: #46a049;
+    margin-top: 50px;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    padding: 16px;
+    background-color: #fff;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background-color: #f1f1f1;
+}
+
+input:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.error {
+    color : #ff0000;
+    size : 100px;
+    text-align: center;
+}
+
+.signup {
+    width: 100%;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    margin: 8px 0;
+    border: none;
+    font-size: large;
+}
+
+.signup:hover {
+    background-color: #46a049;
+}
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
 }
