@@ -1,3 +1,6 @@
+
+
+//get file and requestType and url and callback and return response
 const fetch = (file, requestType, url, callback) => {
     const xhr = new XMLHttpRequest();
 
@@ -18,6 +21,7 @@ const fetch = (file, requestType, url, callback) => {
 
             }
     }
+
     xhr.open(requestType, url, true);
     xhr.send(JSON.stringify(file));
 
