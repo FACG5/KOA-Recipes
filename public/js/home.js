@@ -82,8 +82,6 @@ window.onload = () => {
             alert('Please Check Your Connection');
         } else {
             const rows = result;
-            console.log("enter");
-
             for (let i = 0; i < result.length; i++) {
                 addPost(result[i]);
             }
