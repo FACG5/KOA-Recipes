@@ -17,6 +17,10 @@ const router = (request, response) => {
         endpoint = '/sign_up';
     }
 
+    if(endpoint === '/'){
+        handleSignIn (request, response);
+    }
+
     if (endpoint === '/home') {
         handleHomePage(request, response);
     } else if (endpoint.includes('public')) {
