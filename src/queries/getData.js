@@ -3,7 +3,7 @@ const getData= (username,cb )=>{
 
 
     const sql = {
-        text:'SELECT * FROM users where username = $1;',
+        text:'SELECT * FROM users WHERE username = $1;',
         values:[username]
     };
     db_connection.query(sql, (err, res)=>{

@@ -16,7 +16,6 @@ button.addEventListener("click", () => {
             if (err) {
                 window.location = "/sign_in";
             } else {
-                alert('/home')
                 window.location = "/home";
             }
         })

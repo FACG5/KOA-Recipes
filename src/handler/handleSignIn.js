@@ -40,7 +40,6 @@ const signInPost = (request, response) => {
             } else {
                 if (result.rowCount > 0) {
                     bcrypt.compare(object["password"], result.rows[0].password, (err, result1) => {
-                        console.log(result);
                         if (result1) {
                             const data = {
                                 username: object["username"]

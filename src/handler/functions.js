@@ -54,7 +54,6 @@ const handleHomePage = (request, response) => {
         fs.readFile(path.join(__dirname, '..', '..', 'public', 'home.html'), (err, file) => {
             if (err) {
                 handlePageNotFound(request, response);
-                console.log(err);
             } else {
                 response.writeHead(200, { "content-type": "text/html" });
                 response.end(file);
