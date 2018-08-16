@@ -8,10 +8,14 @@ const { handleAddUser, handlerSignupPage } = require('./handler/handleSignUpPage
 const { handleOtherFiles, handlePageNotFound, handleHomePage } = require('./handler/functions');
 
 const router = (request, response) => {
-    const endpoint = request.url;
+    let endpoint = request.url;
 
 
     const method = request.method;
+    
+    if(endpoint === '/'){
+        endpoint = '/sign_up';
+    }
 
     if (endpoint === '/home') {
         handleHomePage(request, response);
