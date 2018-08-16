@@ -12,11 +12,12 @@ const hashPassword = (password, cb) => {
 };
 
 const verify = (data) => {
-    if (data["username"].toString().length === 0 ||
-        data["password"].toString().length === 0 ||
-        data["fname"].toString().length === 0 ||
-        data["lname"].toString().length === 0
-    ) return false;
+
+    if (!(data["username"].toString() &&
+        data["password"].toString() &&
+        data["fname"].toString() &&
+        data["lname"].toString()
+    )) return false;
     else return true;
 };
 
@@ -41,7 +42,7 @@ const handleAddUser = (request, response) => {
                         }
                         else {
                             response.writeHead(200, { "content-type": "application/javascript" });
-                            response.end(JSON.stringify({"result":"Done"}));
+                            response.end(JSON.stringify({ "result": "Done" }));
 
                         }
 
