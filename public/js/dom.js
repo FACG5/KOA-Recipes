@@ -1,6 +1,7 @@
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const button = document.getElementById("btn");
+const sign = document.getElementById('sign_up');
 
 
 button.addEventListener("click", () => {
@@ -30,3 +31,7 @@ const verfiy = () => {
     return username.value.trim() !== '' && password.value.trim() !== '';
 
 }
+
+sign.addEventListener('click',(e)=>{
+    window.location='/sign_up';
+})

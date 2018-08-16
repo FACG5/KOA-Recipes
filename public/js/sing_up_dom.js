@@ -13,6 +13,7 @@ const fnameError = select('fnameError');
 const lname = select('lname');
 const lnameError = select('lnameError');
 const button = select('button');
+const sign = select('sign_in');
 
 const regex = /^[a-zA-Z0-9\-]{5,}$/;
 const regexName = /^[a-zA-Z]{1,}$/;
@@ -120,3 +121,6 @@ const verfiy = () => {
     else return true;
 };
 
+sign.addEventListener('click',(e)=>{
+    window.location='/sign_in';
+});

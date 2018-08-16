@@ -13,6 +13,10 @@ const router = (request, response) => {
 
     const method = request.method;
 
+    if(endpoint === '/'){
+        handleSignIn (request, response);
+    }
+
     if (endpoint === '/home') {
         handleHomePage(request, response);
     } else if (endpoint.includes('public')) {
