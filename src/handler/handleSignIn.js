@@ -37,8 +37,8 @@ const signInPost = (request, response) => {
 
                 response.writeHead(200, { "content-type": "application/javascript" });
                 response.end(JSON.stringify({ err: "There Is Error In Reading Post" }));
-            } else {
-                if (result.rowCount > 0) {
+            } else  if (result.rowCount > 0){
+                
                     bcrypt.compare(object["password"], result.rows[0].password, (err, result1) => {
                         if (result1) {
                             const data = {
@@ -52,7 +52,7 @@ const signInPost = (request, response) => {
                             response.end(JSON.stringify({ 'err': "There Is Error In Reading Post" }));
                         }
                     });
-                }
+                
 
 
 
